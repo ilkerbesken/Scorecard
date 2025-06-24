@@ -1,0 +1,181 @@
+ body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        button, input, select {
+            min-height: 44px; 
+        }
+        
+        @media (max-width: 640px) {
+            #scoreTable {
+                font-size: 12px;
+            }
+            
+            #scoreTable th,
+            #scoreTable td {
+                padding: 4px 2px;
+            }
+            
+            .score-cell {
+                width: 30px !important;
+                height: 30px !important;
+                font-size: 14px !important;
+            }
+        }
+        
+        .touch-button {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        select {
+            font-size: 16px;
+        }
+        
+        @media (max-width: 480px) {
+            #weatherInfo .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+        }
+        
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        button:focus,
+        input:focus,
+        select:focus {
+            outline: 2px solid #3B82F6;
+            outline-offset: 2px;
+        }
+
+        .score-selector {
+            position: absolute;
+            background: white;
+            border: 2px solid #3B82F6;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            padding: 4px;
+            min-width: 120px;
+        }
+        
+        .score-option {
+            padding: 8px 4px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s;
+            background: #fff;
+            color: #374151;
+        }
+        
+        .score-option:hover {
+            background-color: #3B82F6;
+            color: white;
+        }
+        
+        .score-option.selected {
+            background-color: #3B82F6;
+            color: white;
+        }
+        
+        .score-option.miss {
+            color: #EF4444;
+        }
+        
+        .score-option.miss:hover {
+            background-color: #EF4444;
+            color: white;
+        }
+        
+        .score-option.x {
+            color: #10B981;
+        }
+        
+        .score-option.x:hover {
+            background-color: #10B981;
+            color: white;
+        }
+        
+        .score-cell {
+            width: 40px;
+            height: 40px;
+            margin: auto;
+            text-align: center;
+            cursor: pointer;
+            background-color: #F9FAFB;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            color: #4B5563;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease-in-out;
+            user-select: none;
+            position: relative;
+        }
+        
+        .score-cell:hover {
+            background-color: #F3F4F6;
+            border-color: #3B82F6;
+            transform: scale(1.05);
+            z-index: 20;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
+        
+        .score-cell.inactive {
+            opacity: 0.4;
+            pointer-events: none;
+            background-color: #E5E7EB !important;
+            color: #9CA3AF !important;
+            cursor: not-allowed;
+        }
+        
+        .score-yellow { background-color: #FBBF24 !important; color: #78350F !important; }
+        .score-red { background-color: #F87171 !important; color: #7F1D1D !important; }
+        .score-blue { background-color: #60A5FA !important; color: #1E3A8A !important; }
+        .score-black { background-color: #1F2937 !important; color: #F9FAFB !important; }
+        .score-white { background-color: #FFFFFF !important; color: #1F2937 !important; border: 1px solid #6B7280;}
+        .score-green { background-color: #34D399 !important; color: #064E3B !important; }
+
+        /* Popup score selector base colors */
+        .score-option {
+            background: #fff;
+            color: #374151;
+            border: none;
+        }
+        .score-option[data-score="2"], .score-option[data-score="1"] { border: 1px solid #6B7280; }
+
+        /* Popup hover colors */
+        .score-option[data-score="10"]:hover,
+        .score-option[data-score="9"]:hover,
+        .score-option.x:hover { background-color: #FBBF24 !important; color: #78350F !important; }
+        .score-option[data-score="8"]:hover,
+        .score-option[data-score="7"]:hover { background-color: #F87171 !important; color: #7F1D1D !important; }
+        .score-option[data-score="6"]:hover,
+        .score-option[data-score="5"]:hover { background-color: #60A5FA !important; color: #1E3A8A !important; }
+        .score-option[data-score="4"]:hover,
+        .score-option[data-score="3"]:hover { background-color: #1F2937 !important; color: #F9FAFB !important; }
+        .score-option[data-score="2"]:hover,
+        .score-option[data-score="1"]:hover { background-color: #FFFFFF !important; color: #1F2937 !important; border: 1px solid #6B7280; }
+        .score-option[data-score="0"]:hover,
+        .score-option.miss:hover { background-color: #34D399 !important; color: #064E3B !important; }
+    

@@ -6,9 +6,8 @@
     <title>Archery Score Sheet - Giriş</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { font-family: 'Inter', sans-serif; background: #f3f4f6; }
-    </style>
+    <link rel="stylesheet" href="app.css">
+   
 </head>
 <body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
     <div class="bg-white shadow-lg rounded-xl p-8 max-w-md w-full">
@@ -26,12 +25,7 @@
         </div>
         <button id="continueBtn" class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">Continue</button>
     </div>
-    <script>
-        document.getElementById('continueBtn').addEventListener('click', function() {
-            const lang = document.getElementById('lang-select').value;
-            localStorage.setItem('archeryAppLang', lang);
-            window.location.href = 'app.html';
-        });
-    </script>
+    
+    <script src="index.js"></script>
 </body>
 </html> 
